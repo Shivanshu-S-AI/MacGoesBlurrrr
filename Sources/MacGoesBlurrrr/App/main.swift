@@ -4,11 +4,12 @@ let args = CommandLine.arguments
 
 func printUsage() {
     print("""
-    🤫 Mac My Business - macOS Menu Bar Frosted Glass Privacy Shield
+    🥶 MacGoesBlurrrr - macOS Menu Bar Frosted Glass Privacy Shield
+    (Haha screen goes blurrrr)
 
     Usage:
-      MacMyBusiness [options]
-      mmb [options]
+      MacGoesBlurrrr [options]
+      blurrrr [options]
 
     Options:
       --toggle             Toggle frosted glass privacy shield on / off
@@ -20,7 +21,7 @@ func printUsage() {
       --blur-menu [on|off] Toggle or set macOS menu bar blurring
       --no-blur-menu       Disable macOS menu bar blurring
       --status             Print current shield state
-      --quit               Quit the running Mac My Business app
+      --quit               Quit the running MacGoesBlurrrr app
       -h, --help           Show this help message
 
     Global Keyboard Shortcut:
@@ -53,33 +54,33 @@ if args.contains("--list-presets") {
 }
 
 if args.contains("--toggle") {
-    sendNotification(name: "com.macmybusiness.app.toggle")
-    print("Sent toggle signal to Mac My Business.")
+    sendNotification(name: "com.macgoesblurrrr.app.toggle")
+    print("Sent toggle signal to MacGoesBlurrrr.")
     exit(0)
 }
 
 if args.contains("--blur") {
-    sendNotification(name: "com.macmybusiness.app.blur")
-    print("Sent veil ON signal to Mac My Business.")
+    sendNotification(name: "com.macgoesblurrrr.app.blur")
+    print("Sent veil ON signal to MacGoesBlurrrr.")
     exit(0)
 }
 
 if args.contains("--unblur") {
-    sendNotification(name: "com.macmybusiness.app.unblur")
-    print("Sent veil OFF signal to Mac My Business.")
+    sendNotification(name: "com.macgoesblurrrr.app.unblur")
+    print("Sent veil OFF signal to MacGoesBlurrrr.")
     exit(0)
 }
 
 if args.contains("--random") || args.contains("--shuffle") {
-    sendNotification(name: "com.macmybusiness.app.random")
-    print("Sent shuffle to random preset signal to Mac My Business.")
+    sendNotification(name: "com.macgoesblurrrr.app.random")
+    print("Sent shuffle to random preset signal to MacGoesBlurrrr.")
     exit(0)
 }
 
 if let presetIdx = args.firstIndex(of: "--preset"), presetIdx + 1 < args.count {
     let presetName = args[presetIdx + 1]
-    sendNotification(name: "com.macmybusiness.app.preset", userInfo: ["name": presetName])
-    print("Sent switch to preset '\(presetName)' signal to Mac My Business.")
+    sendNotification(name: "com.macgoesblurrrr.app.preset", userInfo: ["name": presetName])
+    print("Sent switch to preset '\(presetName)' signal to MacGoesBlurrrr.")
     exit(0)
 }
 
@@ -87,24 +88,24 @@ if args.contains("--blur-menu") {
     if let idx = args.firstIndex(of: "--blur-menu"), idx + 1 < args.count {
         let val = args[idx + 1].lowercased()
         let enable = (val == "true" || val == "on" || val == "1" || val == "yes")
-        sendNotification(name: "com.macmybusiness.app.blurMenu", userInfo: ["enabled": enable])
-        print("Sent blur menu bar \(enable ? "ON" : "OFF") signal to Mac My Business.")
+        sendNotification(name: "com.macgoesblurrrr.app.blurMenu", userInfo: ["enabled": enable])
+        print("Sent blur menu bar \(enable ? "ON" : "OFF") signal to MacGoesBlurrrr.")
     } else {
-        sendNotification(name: "com.macmybusiness.app.blurMenu")
-        print("Sent toggle blur menu bar signal to Mac My Business.")
+        sendNotification(name: "com.macgoesblurrrr.app.blurMenu")
+        print("Sent toggle blur menu bar signal to MacGoesBlurrrr.")
     }
     exit(0)
 }
 
 if args.contains("--no-blur-menu") {
-    sendNotification(name: "com.macmybusiness.app.blurMenu", userInfo: ["enabled": false])
-    print("Sent blur menu bar OFF signal to Mac My Business.")
+    sendNotification(name: "com.macgoesblurrrr.app.blurMenu", userInfo: ["enabled": false])
+    print("Sent blur menu bar OFF signal to MacGoesBlurrrr.")
     exit(0)
 }
 
 if args.contains("--quit") {
-    sendNotification(name: "com.macmybusiness.app.quit")
-    print("Sent quit signal to Mac My Business.")
+    sendNotification(name: "com.macgoesblurrrr.app.quit")
+    print("Sent quit signal to MacGoesBlurrrr.")
     exit(0)
 }
 
@@ -116,19 +117,19 @@ if args.contains("--status") {
     let timeout = UserDefaults.standard.double(forKey: "GlassScreen_idleTimeoutMinutes")
     let timeoutStr = timeout > 0 ? "\(timeout)m" : "2m"
     let idleStyle = UserDefaults.standard.string(forKey: "GlassScreen_idlePresetId") ?? "current"
-    print("Mac My Business Status: \(isActive ? "VEIL ACTIVE 🟢" : "CLEAR ⚪️") | Preset: [\(preset)] | Menu Blur: \(blurMenu ? "ON" : "OFF") | Auto-Idle: \(autoIdle ? "ON (\(timeoutStr), style: \(idleStyle))" : "OFF")")
+    print("MacGoesBlurrrr Status: \(isActive ? "VEIL ACTIVE 🟢" : "CLEAR ⚪️") | Preset: [\(preset)] | Menu Blur: \(blurMenu ? "ON" : "OFF") | Auto-Idle: \(autoIdle ? "ON (\(timeoutStr), style: \(idleStyle))" : "OFF")")
     exit(0)
 }
 
 // Check for single instance
 let currentPID = ProcessInfo.processInfo.processIdentifier
-let runningApps = NSRunningApplication.runningApplications(withBundleIdentifier: "com.macmybusiness.app")
+let runningApps = NSRunningApplication.runningApplications(withBundleIdentifier: "com.macgoesblurrrr.app")
 let otherInstances = runningApps.filter { $0.processIdentifier != currentPID }
 
 if !otherInstances.isEmpty {
     // Already running, show UI
-    sendNotification(name: "com.macmybusiness.app.showUI")
-    print("Mac My Business is already running in menu bar. Opened control panel.")
+    sendNotification(name: "com.macgoesblurrrr.app.showUI")
+    print("MacGoesBlurrrr is already running in menu bar. Opened control panel.")
     exit(0)
 }
 

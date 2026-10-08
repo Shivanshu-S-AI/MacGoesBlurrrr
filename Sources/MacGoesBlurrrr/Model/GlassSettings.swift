@@ -1,5 +1,6 @@
 import SwiftUI
 import Combine
+import ServiceManagement
 
 @MainActor
 public final class GlassSettings: ObservableObject {
@@ -101,7 +102,28 @@ public final class GlassSettings: ObservableObject {
     }
 
     @Published public var launchAtLogin: Bool {
-        didSet { defaults.set(launchAtLogin, forKey: Keys.launchAtLogin) }
+        didSet {
+            defaults.set(launchAtLogin, forKey: Keys.launchAtLogin)
+            applyLaunchAtLogin(launchAtLogin)
+        }
+    }
+
+    public func applyLaunchAtLogin(_ enabled: Bool) {
+        if #available(macOS 13.0, *) {
+            do {
+                if enabled {
+                    if SMAppService.mainApp.status != .enabled {
+                        try SMAppService.mainApp.register()
+                    }
+                } else {
+                    if SMAppService.mainApp.status == .enabled {
+                        try SMAppService.mainApp.unregister()
+                    }
+                }
+            } catch {
+                print("Failed to update Launch at Login: \(error)")
+            }
+        }
     }
 
     @Published public var selectedCategory: PresetCategory = .all
@@ -129,7 +151,12 @@ public final class GlassSettings: ObservableObject {
         self.coverDock = defaults.object(forKey: Keys.coverDock) != nil ? defaults.bool(forKey: Keys.coverDock) : true
         self.blurMenu = defaults.object(forKey: Keys.blurMenu) != nil ? defaults.bool(forKey: Keys.blurMenu) : true
         self.allMonitors = defaults.object(forKey: Keys.allMonitors) != nil ? defaults.bool(forKey: Keys.allMonitors) : true
-        self.launchAtLogin = defaults.bool(forKey: Keys.launchAtLogin)
+        if defaults.object(forKey: Keys.launchAtLogin) != nil {
+            self.launchAtLogin = defaults.bool(forKey: Keys.launchAtLogin)
+        } else {
+            self.launchAtLogin = true
+            defaults.set(true, forKey: Keys.launchAtLogin)
+        }
         self.randomizeOnShortcut = defaults.object(forKey: Keys.randomizeOnShortcut) != nil ? defaults.bool(forKey: Keys.randomizeOnShortcut) : true
         self.autoBlurOnIdle = defaults.object(forKey: Keys.autoBlurOnIdle) != nil ? defaults.bool(forKey: Keys.autoBlurOnIdle) : true
         self.idleTimeoutMinutes = defaults.object(forKey: Keys.idleTimeoutMinutes) != nil ? defaults.double(forKey: Keys.idleTimeoutMinutes) : 2.0

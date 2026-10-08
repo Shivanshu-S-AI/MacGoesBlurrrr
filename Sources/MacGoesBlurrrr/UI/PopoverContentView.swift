@@ -116,7 +116,7 @@ public struct PopoverContentView: View {
             // Title & Status
             VStack(alignment: .leading, spacing: 2) {
                 HStack(spacing: 6) {
-                    Text("Mac My Business")
+                    Text("MacGoesBlurrrr")
                         .font(.system(size: 15, weight: .bold))
                         .foregroundColor(.primary)
 
@@ -810,6 +810,21 @@ public struct PopoverContentView: View {
                 }
                 .toggleStyle(SwitchToggleStyle(tint: .accentColor))
                 .controlSize(.mini)
+
+                Divider().opacity(0.2)
+
+                // Launch at Login
+                Toggle(isOn: $settings.launchAtLogin) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Start on Mac Startup")
+                            .font(.system(size: 11, weight: .semibold))
+                        Text("Automatically open MacGoesBlurrrr when Mac boots")
+                            .font(.system(size: 9.5))
+                            .foregroundColor(.secondary)
+                    }
+                }
+                .toggleStyle(SwitchToggleStyle(tint: .accentColor))
+                .controlSize(.mini)
             }
             .padding(12)
             .background(
@@ -876,7 +891,7 @@ public struct PopoverContentView: View {
 
             VStack(spacing: 8) {
                 HStack {
-                    Text("Mac My Business")
+                    Text("MacGoesBlurrrr")
                         .font(.system(size: 11, weight: .bold))
                     Spacer()
                     Text("Version 1.0.0 (Apple Silicon)")
@@ -892,7 +907,7 @@ public struct PopoverContentView: View {
                     HStack {
                         Image(systemName: "power")
                             .font(.system(size: 11, weight: .bold))
-                        Text("Quit Mac My Business")
+                        Text("Quit MacGoesBlurrrr")
                             .font(.system(size: 11, weight: .semibold))
                     }
                     .foregroundColor(.red.opacity(0.9))

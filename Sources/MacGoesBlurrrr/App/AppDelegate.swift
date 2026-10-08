@@ -2,14 +2,14 @@ import AppKit
 
 @MainActor
 public final class AppDelegate: NSObject, NSApplicationDelegate {
-    public static let notificationToggle = Notification.Name("com.macmybusiness.app.toggle")
-    public static let notificationBlur = Notification.Name("com.macmybusiness.app.blur")
-    public static let notificationUnblur = Notification.Name("com.macmybusiness.app.unblur")
-    public static let notificationPreset = Notification.Name("com.macmybusiness.app.preset")
-    public static let notificationRandomPreset = Notification.Name("com.macmybusiness.app.random")
-    public static let notificationShowUI = Notification.Name("com.macmybusiness.app.showUI")
-    public static let notificationBlurMenu = Notification.Name("com.macmybusiness.app.blurMenu")
-    public static let notificationQuit = Notification.Name("com.macmybusiness.app.quit")
+    public static let notificationToggle = Notification.Name("com.macgoesblurrrr.app.toggle")
+    public static let notificationBlur = Notification.Name("com.macgoesblurrrr.app.blur")
+    public static let notificationUnblur = Notification.Name("com.macgoesblurrrr.app.unblur")
+    public static let notificationPreset = Notification.Name("com.macgoesblurrrr.app.preset")
+    public static let notificationRandomPreset = Notification.Name("com.macgoesblurrrr.app.random")
+    public static let notificationShowUI = Notification.Name("com.macgoesblurrrr.app.showUI")
+    public static let notificationBlurMenu = Notification.Name("com.macgoesblurrrr.app.blurMenu")
+    public static let notificationQuit = Notification.Name("com.macgoesblurrrr.app.quit")
 
     public func applicationDidFinishLaunching(_ notification: Notification) {
         // Run as menu bar accessory (no dock icon, stays unobtrusive)
@@ -40,6 +40,11 @@ public final class AppDelegate: NSObject, NSApplicationDelegate {
 
         // Setup Intelligent Idle Detection Service (Auto-Blur & Wake on input)
         IdleBlurService.shared.start()
+
+        // Ensure Launch at Login is registered if enabled
+        if GlassSettings.shared.launchAtLogin {
+            GlassSettings.shared.applyLaunchAtLogin(true)
+        }
     }
 
     private func setupDistributedNotifications() {

@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
     <key>CFBundleName</key>
-    <string>Mac My Business</string>
+    <string>MacGoesBlurrrr</string>
     <key>CFBundleDisplayName</key>
-    <string>Mac My Business</string>
+    <string>MacGoesBlurrrr</string>
     <key>CFBundleIdentifier</key>
-    <string>com.macmybusiness.app</string>
+    <string>com.macgoesblurrrr.app</string>
     <key>CFBundleExecutable</key>
-    <string>MacMyBusiness</string>
+    <string>MacGoesBlurrrr</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
@@ -30,10 +30,11 @@
     <array>
         <dict>
             <key>CFBundleURLName</key>
-            <string>com.macmybusiness.app</string>
+            <string>com.macgoesblurrrr.app</string>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>macmybusiness</string>
+                <string>macgoesblurrrr</string>
+                <string>blurrrr</string>
                 <string>glassscreen</string>
             </array>
         </dict>

@@ -1,22 +1,22 @@
 <div align="center">
 
-# 🤫 Mac My Business
-### *Mind your own business? No, Mac My Business.*
+# 🥶 MacGoesBlurrrr
+### *Haha screen goes blurrrr*
 
 <p align="center">
   <em>The aesthetic, hardware-accelerated frosted glass privacy shield for macOS.<br/>
-  Because what's on your Mac is strictly your business — not that coworker hovering by your desk or the stranger squinting at your screen at Starbucks.</em>
+  Because what's on your screen is strictly your business — not the person peering over your shoulder at the office or coffee shop.</em>
 </p>
 
-[![macOS](https://img.shields.io/badge/macOS-13.0%2B%20Ventura%20%7C%20Sonoma%20%7C%20Sequoia-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/Shivanshu-S-AI/mac-my-business)
+[![macOS](https://img.shields.io/badge/macOS-13.0%2B%20Ventura%20%7C%20Sonoma%20%7C%20Sequoia-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/Shivanshu-S-AI/MacGoesBlurrrr)
 [![Swift](https://img.shields.io/badge/Swift-6.0-F05138?style=for-the-badge&logo=swift&logoColor=white)](https://swift.org)
-[![Architecture](https://img.shields.io/badge/Architecture-Apple%20Silicon%20%2F%20Intel-success?style=for-the-badge)](https://github.com/Shivanshu-S-AI/mac-my-business)
-[![Permissions](https://img.shields.io/badge/Permissions-Zero%20Screen%20Recording-blueviolet?style=for-the-badge)](https://github.com/Shivanshu-S-AI/mac-my-business)
+[![Architecture](https://img.shields.io/badge/Architecture-Apple%20Silicon%20%2F%20Intel-success?style=for-the-badge)](https://github.com/Shivanshu-S-AI/MacGoesBlurrrr)
+[![Permissions](https://img.shields.io/badge/Permissions-Zero%20Screen%20Recording-blueviolet?style=for-the-badge)](https://github.com/Shivanshu-S-AI/MacGoesBlurrrr)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
 <br/>
 
-### 📦 [⬇️ Download Latest DMG Installer](release/MacMyBusiness.dmg)
+### 📦 [⬇️ Download Latest DMG Installer (v1.0.0)](release/MacGoesBlurrrr.dmg)
 **Ready-to-use macOS disk image • Drag-and-drop install • Apple Silicon & Intel**
 
 ---
@@ -25,16 +25,16 @@
 
 ## 🧐 What is this, and why do you desperately need it?
 
-Picture this: You step away from your laptop for 45 seconds to grab coffee, pet your cat, or stretch. You suddenly freeze mid-stride remembering:
+Picture this: You step away from your laptop for 45 seconds to grab water, pet your cat, or stretch. You suddenly freeze mid-stride remembering:
 
 - 💸 Your bank account balance and credit score are displayed in glorious 4K resolution.
 - 💬 You left a spicy Slack message or uncensored group chat in full view.
 - 🍝 Your terrifying spaghetti code is exposed to judging senior engineers.
 - 🔍 Your search tab says *"how to exit vim without crying"* or *"can my boss see my open tabs"*.
 
-Locking your screen every 60 seconds is exhausting — nobody wants to type a 24-character master password 50 times a day. Turning off your monitor takes seconds and rearranges your entire multi-display setup.
+Locking your screen every 60 seconds is exhausting — nobody wants to type a 24-character master password 50 times a day. Turning off your monitor takes seconds and scrambles your multi-monitor setup.
 
-**`Mac My Business`** is the elegant, witty answer:
+**`MacGoesBlurrrr`** is the elegant, witty answer:
 
 > The second you step away from your Mac, your entire display is automatically cloaked in a **breathtaking, hardware-accelerated frosted glass veil**. The microsecond you twitch your mouse or tap a key, the frost instantly vanishes and you're back to work. 
 
@@ -44,15 +44,16 @@ No passwords. No awkward minimize frenzies. No nosy peepers. Just pure, frosted 
 
 ## ✨ Features That Make It Sing
 
+- 🚀 **Starts on Mac Startup**: Automatically registers with macOS Login Items (`SMAppService`) on first launch so you never have to remember to open it. Includes a one-click toggle right in the control panel.
 - ⏳ **Smart Auto-Idle Privacy Shield**: Detects when your Mac goes idle (customizable from 1 to 30 minutes) and silently drops the frosted glass curtain. Touch the trackpad or keyboard, and it dissolves instantly.
 - 🚨 **Panic Key `⌥⌘B` (Option + Command + B)**: Someone approaching your desk with "do you have a quick sec?" energy? Hit `⌥⌘B` and blanket your screen instantly. Hit it again to unblur.
 - 🎲 **Aesthetic Shuffle `⌥⇧⌘B`**: Roll the dice and switch between 10 hand-crafted glassmorphism styles on the fly.
-- 🛡️ **Zero Screen-Recording Permissions**: Unlike naive screen blur apps that run continuous screen-capture loops (killing battery and triggering scary macOS security warnings), **Mac My Business** taps directly into native Apple WindowServer compositor backdrops (`NSVisualEffectView` + `CGSSetWindowBackgroundBlurRadius`). **0.0% CPU overhead, zero battery drain.**
+- 🛡️ **Zero Screen-Recording Permissions**: Unlike naive screen blur apps that run continuous screen-capture loops (killing battery and triggering scary macOS security warnings), **MacGoesBlurrrr** taps directly into native Apple WindowServer compositor backdrops (`NSVisualEffectView` + `CGSSetWindowBackgroundBlurRadius`). **0.0% CPU overhead, zero battery drain.**
 - 🎛️ **Live Customization Studio**: Tweak Blur Strength, Tint Opacity, Frosted Noise Grain, Specular Lighting Bevel, and Vignette in real-time.
 - 🖥️ **Multi-Display Synchronized**: Veils all attached external monitors simultaneously without dropping a frame.
 - 🖱️ **Click-Through Mode**: Want the dreamy frosted aesthetic while still clicking on Spotify, watching a lecture, or typing in a document? Toggle Click-Through on.
 - 🕹️ **Menu Bar Resident**: Sits unobtrusively in your status bar with a sleek aperture lens icon that pulses when veil is active. Option-click for instant toggle.
-- 🤖 **CLI & Automation Ready**: Control everything via `./mmb` (or `./glass`) in terminal or `macmybusiness://` URL scheme from Raycast, Alfred, and Shortcuts.
+- 🤖 **CLI & Automation Ready**: Control everything via `./blurrrr` (or `./glass`) in terminal or `macgoesblurrrr://` URL scheme from Raycast, Alfred, and Shortcuts.
 
 ---
 
@@ -86,14 +87,14 @@ No passwords. No awkward minimize frenzies. No nosy peepers. Just pure, frosted 
 
 ### Option 1: Install via DMG Installer (Easiest)
 
-1. Download [**MacMyBusiness.dmg**](release/MacMyBusiness.dmg) from the `release/` folder or [Releases](https://github.com/Shivanshu-S-AI/mac-my-business/releases).
+1. Download [**MacGoesBlurrrr.dmg**](release/MacGoesBlurrrr.dmg) from the `release/` folder or [Releases](https://github.com/Shivanshu-S-AI/MacGoesBlurrrr/releases).
 2. Open the `.dmg` file.
-3. Drag **Mac My Business.app** into your **Applications** folder.
-4. Launch **Mac My Business** — it will appear directly in your macOS menu bar!
+3. Drag **MacGoesBlurrrr.app** into your **Applications** folder.
+4. Launch **MacGoesBlurrrr** — it will appear directly in your macOS menu bar!
 
 ```bash
 # Or open the downloaded DMG right from terminal
-open release/MacMyBusiness.dmg
+open release/MacGoesBlurrrr.dmg
 ```
 
 ### Option 2: Build & Run from Source
@@ -102,14 +103,14 @@ Requirements: macOS 13.0+ and Xcode / Swift 6.0 toolchain.
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/Shivanshu-S-AI/mac-my-business.git
-cd mac-my-business
+git clone https://github.com/Shivanshu-S-AI/MacGoesBlurrrr.git
+cd MacGoesBlurrrr
 
 # 2. Build the app bundle
 ./scripts/build_app.sh
 
 # 3. Launch the app
-open "build/Mac My Business.app"
+open build/MacGoesBlurrrr.app
 ```
 
 Want to generate your own clean DMG installer package?
@@ -132,41 +133,41 @@ Want to generate your own clean DMG installer package?
 
 ---
 
-## 💻 CLI & Automation (`./mmb` or `./glass`)
+## 💻 CLI & Automation (`./blurrrr` or `./glass`)
 
-Control **Mac My Business** directly from your terminal, Alfred, Raycast, or Stream Deck:
+Control **MacGoesBlurrrr** directly from your terminal, Alfred, Raycast, or Stream Deck:
 
 ```bash
 # Toggle veil on/off
-./mmb --toggle
+./blurrrr --toggle
 
 # Explicit commands
-./mmb --blur
-./mmb --unblur
-./mmb --random
+./blurrrr --blur
+./blurrrr --unblur
+./blurrrr --random
 
 # Switch to a specific preset
-./mmb --preset sakura_pink
-./mmb --preset obsidian
-./mmb --preset neon
-./mmb --preset frost
+./blurrrr --preset sakura_pink
+./blurrrr --preset obsidian
+./blurrrr --preset neon
+./blurrrr --preset frost
 
 # Inspect status
-./mmb --status
+./blurrrr --status
 
 # List available presets
-./mmb --list-presets
+./blurrrr --list-presets
 
 # Gracefully quit
-./mmb --quit
+./blurrrr --quit
 ```
 
 ### URL Schemes (Raycast, Alfred, Apple Shortcuts)
 You can also trigger actions using `open`:
-- `open macmybusiness://toggle`
-- `open macmybusiness://blur`
-- `open macmybusiness://unblur`
-- `open "macmybusiness://preset?name=obsidian"`
+- `open macgoesblurrrr://toggle`
+- `open macgoesblurrrr://blur`
+- `open macgoesblurrrr://unblur`
+- `open "macgoesblurrrr://preset?name=obsidian"`
 
 ---
 
@@ -179,7 +180,7 @@ You can also trigger actions using `open`:
                               ▲
                               │  GPU Hardware Compositor Pass
 +-----------------------------------------------------------+
-|            GlassOverlayWindow (NSPanel / Window)          |
+|          MacGoesBlurrrr Overlay (NSPanel / Window)        |
 |  - NSVisualEffectView (.behindWindow, hardware composited)|
 |  - CGSSetWindowBackgroundBlurRadius (Direct WindowServer) |
 |  - Procedural micro-grain noise layer                     |
@@ -217,5 +218,5 @@ Feel free to open an issue or submit a Pull Request.
 Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
 
 <div align="center">
-<sub>Made with ❤️ for privacy, aesthetic lovers, and anyone who wants to Mac their own business.</sub>
+<sub>Made with 🥶 for privacy, aesthetic lovers, and anyone whose Mac goes blurrrr.</sub>
 </div>

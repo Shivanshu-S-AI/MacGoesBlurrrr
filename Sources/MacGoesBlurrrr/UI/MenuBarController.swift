@@ -86,7 +86,7 @@ public final class MenuBarController: NSObject, NSPopoverDelegate {
 
         let icon = createVectorStatusIcon(isActive: isActive, accentColor: primaryColor)
         button.image = icon
-        button.toolTip = isActive ? "Mac My Business (\(preset.name)) • ⌥⌘B to unblur, ⌥⇧⌘B to shuffle" : "Mac My Business (Clear) • ⌥⌘B to blur (random style), ⌥-Click to toggle"
+        button.toolTip = isActive ? "MacGoesBlurrrr (\(preset.name)) • ⌥⌘B to unblur, ⌥⇧⌘B to shuffle" : "MacGoesBlurrrr (Clear) • ⌥⌘B to blur (random style), ⌥-Click to toggle"
     }
 
     private func createVectorStatusIcon(isActive: Bool, accentColor: NSColor) -> NSImage {

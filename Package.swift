@@ -2,22 +2,22 @@
 import PackageDescription
 
 let package = Package(
-    name: "MacMyBusiness",
+    name: "MacGoesBlurrrr",
     platforms: [
         .macOS(.v13)
     ],
     products: [
         .executable(
-            name: "MacMyBusiness",
-            targets: ["MacMyBusiness"]
+            name: "MacGoesBlurrrr",
+            targets: ["MacGoesBlurrrr"]
         )
     ],
     dependencies: [],
     targets: [
         .executableTarget(
-            name: "MacMyBusiness",
+            name: "MacGoesBlurrrr",
             dependencies: [],
-            path: "Sources/MacMyBusiness"
+            path: "Sources/MacGoesBlurrrr"
         )
     ]
 )
