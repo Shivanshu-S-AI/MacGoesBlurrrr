@@ -2,22 +2,22 @@
 import PackageDescription
 
 let package = Package(
-    name: "GlassScreen",
+    name: "MacMyBusiness",
     platforms: [
         .macOS(.v13)
     ],
     products: [
         .executable(
-            name: "GlassScreen",
-            targets: ["GlassScreen"]
+            name: "MacMyBusiness",
+            targets: ["MacMyBusiness"]
         )
     ],
     dependencies: [],
     targets: [
         .executableTarget(
-            name: "GlassScreen",
+            name: "MacMyBusiness",
             dependencies: [],
-            path: "Sources/GlassScreen"
+            path: "Sources/MacMyBusiness"
         )
     ]
 )

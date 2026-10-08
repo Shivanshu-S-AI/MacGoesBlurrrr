@@ -116,7 +116,7 @@ public struct PopoverContentView: View {
             // Title & Status
             VStack(alignment: .leading, spacing: 2) {
                 HStack(spacing: 6) {
-                    Text("GlassScreen")
+                    Text("Mac My Business")
                         .font(.system(size: 15, weight: .bold))
                         .foregroundColor(.primary)
 
@@ -876,7 +876,7 @@ public struct PopoverContentView: View {
 
             VStack(spacing: 8) {
                 HStack {
-                    Text("GlassScreen")
+                    Text("Mac My Business")
                         .font(.system(size: 11, weight: .bold))
                     Spacer()
                     Text("Version 1.0.0 (Apple Silicon)")
@@ -892,7 +892,7 @@ public struct PopoverContentView: View {
                     HStack {
                         Image(systemName: "power")
                             .font(.system(size: 11, weight: .bold))
-                        Text("Quit GlassScreen")
+                        Text("Quit Mac My Business")
                             .font(.system(size: 11, weight: .semibold))
                     }
                     .foregroundColor(.red.opacity(0.9))

@@ -4,26 +4,27 @@ let args = CommandLine.arguments
 
 func printUsage() {
     print("""
-    ✨ GlassScreen - macOS Menu Bar Glassmorphism Screen Veil
+    🤫 Mac My Business - macOS Menu Bar Frosted Glass Privacy Shield
 
     Usage:
-      GlassScreen [options]
+      MacMyBusiness [options]
+      mmb [options]
 
     Options:
-      --toggle             Toggle blur screen overlay on / off
-      --blur               Turn blur overlay ON
-      --unblur             Turn blur overlay OFF
+      --toggle             Toggle frosted glass privacy shield on / off
+      --blur               Turn privacy veil ON
+      --unblur             Turn privacy veil OFF
       --random, --shuffle  Switch to a random glass style
       --preset <name>      Switch to a glassmorphism preset (e.g. obsidian, cyberpunk, frost)
       --list-presets       List all available presets
       --blur-menu [on|off] Toggle or set macOS menu bar blurring
       --no-blur-menu       Disable macOS menu bar blurring
-      --status             Print current blur state
-      --quit               Quit the running GlassScreen app
+      --status             Print current shield state
+      --quit               Quit the running Mac My Business app
       -h, --help           Show this help message
 
     Global Keyboard Shortcut:
-      ⌥⌘B  (Option + Command + B) to toggle blur (picks random style on activation)
+      ⌥⌘B  (Option + Command + B) to toggle privacy shield (picks random style on activation)
       ⌥⇧⌘B (Option + Shift + Command + B) to instantly shuffle style
     """)
 }
@@ -52,33 +53,33 @@ if args.contains("--list-presets") {
 }
 
 if args.contains("--toggle") {
-    sendNotification(name: "com.pleasedontlook.glassscreen.toggle")
-    print("Sent toggle signal to GlassScreen.")
+    sendNotification(name: "com.macmybusiness.app.toggle")
+    print("Sent toggle signal to Mac My Business.")
     exit(0)
 }
 
 if args.contains("--blur") {
-    sendNotification(name: "com.pleasedontlook.glassscreen.blur")
-    print("Sent blur ON signal to GlassScreen.")
+    sendNotification(name: "com.macmybusiness.app.blur")
+    print("Sent veil ON signal to Mac My Business.")
     exit(0)
 }
 
 if args.contains("--unblur") {
-    sendNotification(name: "com.pleasedontlook.glassscreen.unblur")
-    print("Sent blur OFF signal to GlassScreen.")
+    sendNotification(name: "com.macmybusiness.app.unblur")
+    print("Sent veil OFF signal to Mac My Business.")
     exit(0)
 }
 
 if args.contains("--random") || args.contains("--shuffle") {
-    sendNotification(name: "com.pleasedontlook.glassscreen.random")
-    print("Sent shuffle to random preset signal to GlassScreen.")
+    sendNotification(name: "com.macmybusiness.app.random")
+    print("Sent shuffle to random preset signal to Mac My Business.")
     exit(0)
 }
 
 if let presetIdx = args.firstIndex(of: "--preset"), presetIdx + 1 < args.count {
     let presetName = args[presetIdx + 1]
-    sendNotification(name: "com.pleasedontlook.glassscreen.preset", userInfo: ["name": presetName])
-    print("Sent switch to preset '\(presetName)' signal to GlassScreen.")
+    sendNotification(name: "com.macmybusiness.app.preset", userInfo: ["name": presetName])
+    print("Sent switch to preset '\(presetName)' signal to Mac My Business.")
     exit(0)
 }
 
@@ -86,24 +87,24 @@ if args.contains("--blur-menu") {
     if let idx = args.firstIndex(of: "--blur-menu"), idx + 1 < args.count {
         let val = args[idx + 1].lowercased()
         let enable = (val == "true" || val == "on" || val == "1" || val == "yes")
-        sendNotification(name: "com.pleasedontlook.glassscreen.blurMenu", userInfo: ["enabled": enable])
-        print("Sent blur menu bar \(enable ? "ON" : "OFF") signal to GlassScreen.")
+        sendNotification(name: "com.macmybusiness.app.blurMenu", userInfo: ["enabled": enable])
+        print("Sent blur menu bar \(enable ? "ON" : "OFF") signal to Mac My Business.")
     } else {
-        sendNotification(name: "com.pleasedontlook.glassscreen.blurMenu")
-        print("Sent toggle blur menu bar signal to GlassScreen.")
+        sendNotification(name: "com.macmybusiness.app.blurMenu")
+        print("Sent toggle blur menu bar signal to Mac My Business.")
     }
     exit(0)
 }
 
 if args.contains("--no-blur-menu") {
-    sendNotification(name: "com.pleasedontlook.glassscreen.blurMenu", userInfo: ["enabled": false])
-    print("Sent blur menu bar OFF signal to GlassScreen.")
+    sendNotification(name: "com.macmybusiness.app.blurMenu", userInfo: ["enabled": false])
+    print("Sent blur menu bar OFF signal to Mac My Business.")
     exit(0)
 }
 
 if args.contains("--quit") {
-    sendNotification(name: "com.pleasedontlook.glassscreen.quit")
-    print("Sent quit signal to GlassScreen.")
+    sendNotification(name: "com.macmybusiness.app.quit")
+    print("Sent quit signal to Mac My Business.")
     exit(0)
 }
 
@@ -115,19 +116,19 @@ if args.contains("--status") {
     let timeout = UserDefaults.standard.double(forKey: "GlassScreen_idleTimeoutMinutes")
     let timeoutStr = timeout > 0 ? "\(timeout)m" : "2m"
     let idleStyle = UserDefaults.standard.string(forKey: "GlassScreen_idlePresetId") ?? "current"
-    print("GlassScreen Status: \(isActive ? "BLUR ACTIVE 🟢" : "CLEAR ⚪️") | Preset: [\(preset)] | Menu Blur: \(blurMenu ? "ON" : "OFF") | Auto-Idle: \(autoIdle ? "ON (\(timeoutStr), style: \(idleStyle))" : "OFF")")
+    print("Mac My Business Status: \(isActive ? "VEIL ACTIVE 🟢" : "CLEAR ⚪️") | Preset: [\(preset)] | Menu Blur: \(blurMenu ? "ON" : "OFF") | Auto-Idle: \(autoIdle ? "ON (\(timeoutStr), style: \(idleStyle))" : "OFF")")
     exit(0)
 }
 
 // Check for single instance
 let currentPID = ProcessInfo.processInfo.processIdentifier
-let runningApps = NSRunningApplication.runningApplications(withBundleIdentifier: "com.pleasedontlook.glassscreen")
+let runningApps = NSRunningApplication.runningApplications(withBundleIdentifier: "com.macmybusiness.app")
 let otherInstances = runningApps.filter { $0.processIdentifier != currentPID }
 
 if !otherInstances.isEmpty {
     // Already running, show UI
-    sendNotification(name: "com.pleasedontlook.glassscreen.showUI")
-    print("GlassScreen is already running in menu bar. Opened control panel.")
+    sendNotification(name: "com.macmybusiness.app.showUI")
+    print("Mac My Business is already running in menu bar. Opened control panel.")
     exit(0)
 }
 

@@ -4,10 +4,11 @@ set -e
 PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$PROJECT_DIR"
 
-echo "🔨 Building GlassScreen (Release)..."
+echo "🔨 Building Mac My Business (Release)..."
 swift build -c release
 
-APP_NAME="GlassScreen.app"
+APP_NAME="Mac My Business.app"
+BIN_NAME="MacMyBusiness"
 BUILD_DIR="$PROJECT_DIR/build"
 APP_BUNDLE="$BUILD_DIR/$APP_NAME"
 CONTENTS_DIR="$APP_BUNDLE/Contents"
@@ -20,10 +21,13 @@ mkdir -p "$MACOS_DIR"
 mkdir -p "$RESOURCES_DIR"
 
 # Copy binary
-cp ".build/release/GlassScreen" "$MACOS_DIR/GlassScreen"
-chmod +x "$MACOS_DIR/GlassScreen"
-cp ".build/release/GlassScreen" "$PROJECT_DIR/glass"
-chmod +x "$PROJECT_DIR/glass"
+cp ".build/release/$BIN_NAME" "$MACOS_DIR/$BIN_NAME"
+chmod +x "$MACOS_DIR/$BIN_NAME"
+
+# Create CLI symlinks
+cp ".build/release/$BIN_NAME" "$PROJECT_DIR/mmb"
+chmod +x "$PROJECT_DIR/mmb"
+ln -sf "$PROJECT_DIR/mmb" "$PROJECT_DIR/glass" 2>/dev/null || cp "$PROJECT_DIR/mmb" "$PROJECT_DIR/glass"
 
 # Copy Info.plist
 cp "Resources/Info.plist" "$CONTENTS_DIR/Info.plist"

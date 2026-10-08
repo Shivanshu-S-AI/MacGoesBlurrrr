@@ -5,13 +5,13 @@ PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$PROJECT_DIR"
 
 echo "=========================================="
-echo "🚀 Building GlassScreen & Creating .dmg"
+echo "🚀 Building Mac My Business & Creating .dmg"
 echo "=========================================="
 
 # 1. Compile Release App Bundle
 "$PROJECT_DIR/scripts/build_app.sh"
 
-APP_NAME="GlassScreen.app"
+APP_NAME="Mac My Business.app"
 BUILD_DIR="$PROJECT_DIR/build"
 APP_BUNDLE="$BUILD_DIR/$APP_NAME"
 
@@ -20,12 +20,12 @@ if [ ! -d "$APP_BUNDLE" ]; then
     exit 1
 fi
 
-DMG_VOLNAME="GlassScreen"
+DMG_VOLNAME="Mac My Business"
 VERSION=$(defaults read "$APP_BUNDLE/Contents/Info.plist" CFBundleShortVersionString 2>/dev/null || echo "1.0.0")
-FINAL_DMG="$BUILD_DIR/GlassScreen-${VERSION}.dmg"
-GENERIC_DMG="$BUILD_DIR/GlassScreen.dmg"
+FINAL_DMG="$BUILD_DIR/MacMyBusiness-${VERSION}.dmg"
+GENERIC_DMG="$BUILD_DIR/MacMyBusiness.dmg"
 STAGING_DIR="$BUILD_DIR/dmg_staging"
-TEMP_DMG="$BUILD_DIR/temp_${DMG_VOLNAME}.dmg"
+TEMP_DMG="$BUILD_DIR/temp_MacMyBusiness.dmg"
 
 echo "📦 Preparing DMG staging directory..."
 rm -rf "$STAGING_DIR" "$TEMP_DMG" "$FINAL_DMG" "$GENERIC_DMG"

@@ -2,14 +2,14 @@ import AppKit
 
 @MainActor
 public final class AppDelegate: NSObject, NSApplicationDelegate {
-    public static let notificationToggle = Notification.Name("com.pleasedontlook.glassscreen.toggle")
-    public static let notificationBlur = Notification.Name("com.pleasedontlook.glassscreen.blur")
-    public static let notificationUnblur = Notification.Name("com.pleasedontlook.glassscreen.unblur")
-    public static let notificationPreset = Notification.Name("com.pleasedontlook.glassscreen.preset")
-    public static let notificationRandomPreset = Notification.Name("com.pleasedontlook.glassscreen.random")
-    public static let notificationShowUI = Notification.Name("com.pleasedontlook.glassscreen.showUI")
-    public static let notificationBlurMenu = Notification.Name("com.pleasedontlook.glassscreen.blurMenu")
-    public static let notificationQuit = Notification.Name("com.pleasedontlook.glassscreen.quit")
+    public static let notificationToggle = Notification.Name("com.macmybusiness.app.toggle")
+    public static let notificationBlur = Notification.Name("com.macmybusiness.app.blur")
+    public static let notificationUnblur = Notification.Name("com.macmybusiness.app.unblur")
+    public static let notificationPreset = Notification.Name("com.macmybusiness.app.preset")
+    public static let notificationRandomPreset = Notification.Name("com.macmybusiness.app.random")
+    public static let notificationShowUI = Notification.Name("com.macmybusiness.app.showUI")
+    public static let notificationBlurMenu = Notification.Name("com.macmybusiness.app.blurMenu")
+    public static let notificationQuit = Notification.Name("com.macmybusiness.app.quit")
 
     public func applicationDidFinishLaunching(_ notification: Notification) {
         // Run as menu bar accessory (no dock icon, stays unobtrusive)

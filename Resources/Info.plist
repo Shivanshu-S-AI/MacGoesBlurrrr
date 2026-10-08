@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
     <key>CFBundleName</key>
-    <string>GlassScreen</string>
+    <string>Mac My Business</string>
     <key>CFBundleDisplayName</key>
-    <string>GlassScreen</string>
+    <string>Mac My Business</string>
     <key>CFBundleIdentifier</key>
-    <string>com.pleasedontlook.glassscreen</string>
+    <string>com.macmybusiness.app</string>
     <key>CFBundleExecutable</key>
-    <string>GlassScreen</string>
+    <string>MacMyBusiness</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
@@ -30,9 +30,10 @@
     <array>
         <dict>
             <key>CFBundleURLName</key>
-            <string>com.pleasedontlook.glassscreen</string>
+            <string>com.macmybusiness.app</string>
             <key>CFBundleURLSchemes</key>
             <array>
+                <string>macmybusiness</string>
                 <string>glassscreen</string>
             </array>
         </dict>
