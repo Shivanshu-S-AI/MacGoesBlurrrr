@@ -15,7 +15,7 @@
 
 <br/>
 
-### 📦 [⬇️ Download Latest DMG Installer (v1.0.0)](release/GlassScreen.dmg)
+### 📦 [⬇️ Download Latest DMG Installer (v1.0.0)](https://github.com/Shivanshu-S-AI/please_dont_look/releases/download/v1.0.0/GlassScreen.dmg)
 **Ready-to-use macOS disk image • Drag-and-drop install • Apple Silicon & Intel**
 
 ---
@@ -85,7 +85,7 @@ No passwords. No awkward minimize frenzies. No nosy peepers. Just pure, frosted 
 
 ### Option 1: Install via DMG Installer (Easiest)
 
-1. Download [`GlassScreen.dmg`](release/GlassScreen.dmg) from the `release/` folder or [Releases](https://github.com/Shivanshu-S-AI/please_dont_look/releases).
+1. Download [**GlassScreen.dmg**](https://github.com/Shivanshu-S-AI/please_dont_look/releases/download/v1.0.0/GlassScreen.dmg) from GitHub Releases or from the [`release/`](release/GlassScreen.dmg) folder.
 2. Open the `.dmg` file.
 3. Drag **GlassScreen.app** into your **Applications** folder.
 4. Launch **GlassScreen** — it will appear directly in your macOS menu bar!
